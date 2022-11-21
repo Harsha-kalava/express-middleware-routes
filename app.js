@@ -7,6 +7,7 @@ const adminRoutes = require('./routes/admin')
 const shopRoutes = require('./routes/shop')
 const contactRoutes = require('./routes/contact')
 const path = require('path')
+const productController = require('./controllers/product')
 
 app.use(bodyParser.urlencoded({extended:true}))
 app.use(express.static(path.join(__dirname,'public')))
@@ -20,12 +21,10 @@ app.use(contactRoutes)
 //  app.post is used to write on the website
 
 app.get('/',(req,res,next)=>{
-    res.send('<h1>Hello express server</h1>') 
+    res.sendFile(path.join(__dirname,'views','home.html'))
 })
 
-app.use((req,res)=>{
-    res.sendFile(path.join(__dirname,'views','404.html'))
-})
+app.use(productController.errorPage)
 
 
 

@@ -1,0 +1,13 @@
+MVC is a design and architectural pattern - 
+
+
+
+Model - Model is responsible for data adding and data receiving.
+
+
+
+View - View is responsible for graphical interface of the data came from the model.
+
+
+
+Controller - Controller manages between model and view.
